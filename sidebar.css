@@ -1,0 +1,29 @@
+
+.sidebar a {
+    padding: 10px;
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-size: 75%;
+}
+.sidebar li {
+    border-bottom: 1px solid black;
+}
+.sidebar {
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    font-family: helvetica neue, helvetica, arial, sans;
+}
+.sidebar li > div {
+    display: none;
+    opacity: 0;
+    -webkit-transition: opacity 1s linear;
+}
+.sidebar li.active > div {
+    display: block;
+    opacity: 1;
+}
+.sidebar select {
+    width: 100%;
+}
