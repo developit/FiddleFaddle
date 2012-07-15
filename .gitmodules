@@ -1,0 +1,6 @@
+[submodule "scripts/flexie"]
+	path = scripts/flexie
+	url = https://github.com/r4z0rw0lf/flexie.git
+[submodule "scripts/ace-builds"]
+	path = scripts/ace-builds
+	url = https://github.com/ajaxorg/ace-builds.git
