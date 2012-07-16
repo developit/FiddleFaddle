@@ -21,7 +21,7 @@
 		<input type="hidden" name="docType" id="docType"/>
 	</form>
 	<div class="toolbar">
-		<button>Play!</button>
+		<button class="play">Play!</button>
 	</div>
 	<div class="panes" data-flex-weight="1" data-flex data-flex-direction="horizontal">
 			<ul class="sidebar">
@@ -49,22 +49,23 @@
 	<div data-flex-weight="1" class="pane">
 		<div id="HTMLEditor">&lt;!-- HTML --&gt;</div>
 	</div>
-	<div class="thingy">
+	<div class="vResize">
 	</div>
 	<div data-flex-weight="1" class="pane">
 		<div id="JavascriptEditor">//Javascript</div>
 	</div>
 </div>
-<div class="thing"></div>
+<div class="hResize"></div>
 <div data-flex-weight="1" style="height:100%;float: left;" data-flex data-flex-direction="vertical">
 	<div data-flex-weight="1" class="pane">
 		<div id="CSSEditor">/* CSS */</div>
 	</div>
-	<div class="thingy">
+	<div class="vResize">
 	</div>
 	<div data-flex-weight="1" class="pane">
 		<div id="result">
 			<iframe id="output"></iframe>
+			<div class="iframeShiv"></div>
 		</div>
 	</div>
 </div>

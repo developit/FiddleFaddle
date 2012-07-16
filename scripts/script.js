@@ -29,20 +29,32 @@ offsetLeft = function(el){
 var activeElement = null;
 document.addEventListener("mousedown", function(e){
 	activeElement = e.target;
+	var which = hasClass(activeElement, "hResize")?2:hasClass(activeElement, "vResize")?1:0;
+	if(which != 0){
+		document.querySelector(".iframeShiv").style.display="block";
+	}
 });
 document.addEventListener("mouseup", function(e){
+	if(activeElement){
+		var which = hasClass(activeElement, "hResize")?2:hasClass(activeElement, "vResize")?1:0;
+		if(which != 0){
+			document.querySelector(".iframeShiv").style.display="none";
+		}
+	}
 	activeElement = null;
 });
 document.addEventListener("mousemove", function(e){
 	if(!activeElement) return;
-	if(hasClass(activeElement, "thing")){
+	var which = hasClass(activeElement, "hResize")?2:hasClass(activeElement, "vResize")?1:0;
+	console.log(which);
+	if(which == 2){
 		var p = previousElement(activeElement);
 		var n = nextElement(activeElement);
 		p.setAttribute("data-flex-weight", e.clientX-offsetLeft(activeElement.parentNode));
 		n.setAttribute("data-flex-weight", activeElement.parentNode.clientWidth - e.clientX+offsetLeft(activeElement.parentNode));
 		resize2();
 	}
-	if(hasClass(activeElement, "thingy")){
+	if(which == 1){
 		var p = previousElement(activeElement);
 		var n = nextElement(activeElement);
 		p.setAttribute("data-flex-weight", e.clientY-offsetTop(activeElement.parentNode));
@@ -67,7 +79,7 @@ function resize2(){
 	CSSEditor.resize();	
 }
 
-document.querySelector("button").addEventListener("click", function(){
+document.querySelector(".play").addEventListener("click", function(){
 	
 	document.querySelector("#HTML").value = btoa(HTMLEditor.getValue());
 	document.querySelector("#CSS").value = btoa(CSSEditor.getValue());

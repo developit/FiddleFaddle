@@ -3,16 +3,16 @@ html, body {
 	padding: 0;
 	margin: 0;
 }
-.thing, .thingy {
+.hResize, .vResize {
 	background: white;
 }
-.thing {
+.hResize {
 	float: left;
 	width: 10px;
 	height: 100%;
 	cursor: col-resize;
 }
-.thingy {
+.vResize {
 	height: 10px;
 	cursor: row-resize;
 }
@@ -48,12 +48,13 @@ html, body {
 .pane {
 	/* border: 1px solid black; */
 }
-/* {
+*:active {
 	-webkit-user-select: none;
-}*/
+}
 .toolbar {
+	padding-left: 210px;
 	height: 50px;
-	background: -webkit-linear-gradient(top, hsl(330,100%, 51%) 0%, hsl(330,100%, 41%) 100%);
+	background: url(images/logo.svg) no-repeat, -webkit-linear-gradient(top, hsl(330,100%, 51%) 0%, hsl(330,100%, 41%) 100%);
 }
 .toolbar button {
 	margin-top: 10px;
@@ -64,6 +65,14 @@ html, body {
 	border: 1px solid hsl(330,100%, 31%);
 	background: -webkit-linear-gradient(top, hsl(330,100%, 71%) 0%, hsl(330,100%, 67%) 100%);
 
+}
+.iframeShiv {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
 }
 .sidebar {
 	width: 150px;
