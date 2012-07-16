@@ -44,7 +44,7 @@
 </div></li>
 <li><a href="#">Resource</a></li>
 </ul>
-	<div data-flex-weight="1" data-flex data-flex-direction="horizontal" style="height: 100%; float: left;">
+	<div data-flex-weight="1" data-flex data-flex-direction="horizontal" style="height: 100%; float: left;" class="editor_area">
 <div data-flex-weight="1" style="height:100%;float: left;" data-flex data-flex-direction="vertical" >
 	<div data-flex-weight="1" class="pane">
 		<div id="HTMLEditor">&lt;!-- HTML --&gt;</div>
