@@ -50,15 +50,23 @@ document.addEventListener("mousemove", function(e){
 	if(which == 2){
 		var p = previousElement(activeElement);
 		var n = nextElement(activeElement);
-		p.setAttribute("data-flex-weight", e.clientX-offsetLeft(activeElement.parentNode));
-		n.setAttribute("data-flex-weight", activeElement.parentNode.clientWidth - e.clientX+offsetLeft(activeElement.parentNode));
+		var pW = e.clientX-offsetLeft(activeElement.parentNode);
+		var nW = activeElement.parentNode.clientWidth - e.clientX+offsetLeft(activeElement.parentNode);
+		if(!(pW < 200 || nW < 200)){
+			p.setAttribute("data-flex-weight", pW);
+			n.setAttribute("data-flex-weight", nW);
+		}
 		resize2();
 	}
 	if(which == 1){
 		var p = previousElement(activeElement);
 		var n = nextElement(activeElement);
-		p.setAttribute("data-flex-weight", e.clientY-offsetTop(activeElement.parentNode));
-		n.setAttribute("data-flex-weight", activeElement.parentNode.clientHeight - e.clientY + offsetTop(activeElement.parentNode));
+		var pH = e.clientY-offsetTop(activeElement.parentNode);
+		var nH = activeElement.parentNode.clientHeight - e.clientY + offsetTop(activeElement.parentNode);
+		if(!(pH < 100 || nH < 100)){
+			p.setAttribute("data-flex-weight", pH);
+			n.setAttribute("data-flex-weight", nH);
+		}
 		resize2();
 	}
 }, false);
